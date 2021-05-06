@@ -1,4 +1,4 @@
-criando meu projeto: 
+<!-- criando meu projeto: 
 1- yarn create react-app dolarhoje
 
 dentro de index.js cole:
@@ -20,4 +20,4 @@ dentro de app.js cole:
 
 export function App() {
   return <div />;
-}
+} -->
