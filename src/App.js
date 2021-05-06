@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { GlobalStyle } from "./styles/global";
+import { Container } from "./styles/styles.app";
+import moedaSvg from './assets/dolarhoje.png';
+import { useState } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+export function App() {
+const [dolar,setDolar] = useState(1);
+const [real,setReal] = useState(5.35);
+const currentDolar = 5.35;
+  function dolarToReal(event){
+    setDolar(event.target.value);
+    setReal(currentDolar*event.target.value);
+  }
+  function realToDolar(event){
+    setReal(event.target.value);
+    setDolar(event.target.value/ currentDolar);
+  }
+  return <>
+  <GlobalStyle/>
+  <Container>
+    <img src={moedaSvg} alt="dolarhoje"/>
+
+    <div>
+      <div>
+        <span>US$</span>
+        <input type="number" value={dolar} min={0} onChange={dolarToReal} />
+      </div>
+      <span>vale</span>
+      <div>
+        <span>R$</span>
+        <input type="number" value={real} min={0} onChange={realToDolar}/>
+      </div>
+      <span>hoje</span>
     </div>
-  );
+  </Container>
+  </>;
 }
-
-export default App;
