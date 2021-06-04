@@ -7,6 +7,7 @@ export function App() {
 const [dolar,setDolar] = useState(1);
 const [real,setReal] = useState(5.35);
 const currentDolar = 5.35;
+  
   function dolarToReal(event){
     setDolar(event.target.value);
     setReal(currentDolar*event.target.value);
