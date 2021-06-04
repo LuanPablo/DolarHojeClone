@@ -1,6 +1,6 @@
 import { GlobalStyle } from "./styles/global";
 import { Container } from "./styles/styles.app";
-import moedaSvg from './assets/dolarhoje.png';
+import moedaSvg from "./assets/dolarhoje.png";
 import { useState } from "react";
 
 export function App() {
